@@ -1,0 +1,46 @@
+HDFS Command:
+
+hadoop fs -put Oozie_PySpark_Example_WF /user/hadoop/OozieExample/
+
+
+Command to run Oozie workflow:
+
+oozie job -oozie <<OozieUrl>> -config <<name of the job.properties, including path of job.properties is good practice>> -run
+
+oozie job -oozie http://instance-1.us-east1-b.c.nifty-vault-240207.internal:11000/oozie -config job.properties -run
+
+
+Command to run Oozie coordinator:
+
+oozie job -oozie <<OozieUrl>> -config <<name of the coordinator.properties, including path of coordinator.properties is good practice>> -run
+
+oozie job -oozie http://instance-1.us-east1-b.c.nifty-vault-240207.internal:11000/oozie -config coordinator.properties -run
+
+
+Command to get information about Oozie workflow:
+
+oozie job -oozie <<OozieUrl>> -info <<Job id of workflow>>
+
+oozie job -oozie http://instance-1.us-east1-b.c.nifty-vault-240207.internal:11000/oozie -info 0000000-190522015709058-oozie-oozi-W
+
+Command to get information about Oozie coordinator:
+
+oozie job -oozie <<OozieUrl>> -info <<Job id of coordinator>>
+
+oozie job -oozie http://instance-1.us-east1-b.c.nifty-vault-240207.internal:11000/oozie -info 0000148-190322195421143-oozie-oozi-C
+
+Command to kill Oozie workflow:
+
+oozie job -oozie <<OozieUrl>> -kill <<Job id of workflow>>
+
+oozie job -oozie http://instance-1.us-east1-b.c.nifty-vault-240207.internal:11000/oozie -kill 0000149-190322195421143-oozie-oozi-W
+
+Command to kill Oozie coordinator:
+
+oozie job -oozie <<OozieUrl>> -kill <<Job id of coordinator>>
+
+oozie job -oozie http://instance-1.us-east1-b.c.nifty-vault-240207.internal:11000/oozie -kill 0000148-190322195421143-oozie-oozi-C
+
+
+
+
